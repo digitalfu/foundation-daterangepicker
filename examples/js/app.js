@@ -39,8 +39,7 @@ $(function () {
     }
   }, function(start, end) {
     console.log("Callback has been called!");
-    console.log(this);
-    $('input[name=date-range]').val(start.format(format) + ' - ' + end.format(format));
+    this.element.val(start.format(format) + ' - ' + end.format(format));
   });
   //Set the initial state of the picker label
   $('input[name=date-range]').val(startDate.format(format) + ' - ' + endDate.format(format));
