@@ -5,7 +5,7 @@ $(function () {
       endDate = moment().subtract('days', 1),
       format = 'MMMM D, YYYY';
 
-  $('input[name=date-range]').daterangepicker({
+  $('#date-range').daterangepicker({
     startDate: startDate,
     endDate: endDate,
     minDate: '01/01/2012',
@@ -29,7 +29,7 @@ $(function () {
     format: 'MM/DD/YYYY',
     separator: ' to ',
     locale: {
-      applyLabel: 'Submit',
+      applyLabel: 'Apply',
       fromLabel: 'From',
       toLabel: 'To',
       customRangeLabel: 'Custom Range',
@@ -39,8 +39,8 @@ $(function () {
     }
   }, function(start, end) {
     console.log("Callback has been called!");
-    this.element.val(start.format(format) + ' - ' + end.format(format));
+    this.element.find('span').html(start.format(format) + ' - ' + end.format(format));
   });
   //Set the initial state of the picker label
-  $('input[name=date-range]').val(startDate.format(format) + ' - ' + endDate.format(format));
+  $('#date-range span').html(startDate.format(format) + ' - ' + endDate.format(format));
 });

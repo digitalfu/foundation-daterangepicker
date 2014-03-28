@@ -103,6 +103,7 @@
                     '<button class="' + this.applyClass + ' applyBtn" disabled="disabled">' + this.locale.applyLabel + '</button>&nbsp;' +
                     '<button class="' + this.cancelClass + ' cancelBtn">' + this.locale.cancelLabel + '</button>' +
                   '</div>' + */
+                  '<button class="' + this.applyClass + ' applyBtn radius tiny button" disabled="disabled">' + this.locale.applyLabel + '</button>&nbsp;' +
                 '</div>' +
               '</div>';
 
