@@ -480,9 +480,9 @@
         clickNext: function (e) {
             var cal = $(e.target).parents('.calendar');
             if (cal.hasClass('left')) {
-                this.leftCalendar.month.add('month', 1);
+                this.leftCalendar.month.add(1, 'month');
             } else {
-                this.rightCalendar.month.add('month', 1);
+                this.rightCalendar.month.add(1, 'month');
             }
             this.updateCalendars();
         },
@@ -537,7 +537,7 @@
             } else if (startDate.isAfter(endDate)) {
                 $(e.target).addClass('active');
                 this.startDate = startDate;
-                this.endDate = moment(startDate).add('day', 1).startOf('day');
+                this.endDate = moment(startDate).add(1, 'day').startOf('day');
             }
 
             this.leftCalendar.month.month(this.startDate.month()).year(this.startDate.year());
@@ -667,7 +667,7 @@
                 startDay = daysInLastMonth - 6;
 
             var curDate = moment([lastYear, lastMonth, startDay, hour, minute]);
-            for (var i = 0, col = 0, row = 0; i < 42; i++, col++, curDate = moment(curDate).add('day', 1)) {
+            for (var i = 0, col = 0, row = 0; i < 42; i++, col++, curDate = moment(curDate).add(1, 'day')) {
                 if (i > 0 && col % 7 == 0) {
                     col = 0;
                     row++;
