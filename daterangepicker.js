@@ -470,9 +470,9 @@
         clickPrev: function (e) {
             var cal = $(e.target).parents('.calendar');
             if (cal.hasClass('left')) {
-                this.leftCalendar.month.subtract('month', 1);
+                this.leftCalendar.month.subtract(1, 'month');
             } else {
-                this.rightCalendar.month.subtract('month', 1);
+                this.rightCalendar.month.subtract(1, 'month');
             }
             this.updateCalendars();
         },
@@ -645,8 +645,8 @@
         buildCalendar: function (month, year, hour, minute, side) {
 
             var firstDay = moment([year, month, 1]);
-            var lastMonth = moment(firstDay).subtract('month', 1).month();
-            var lastYear = moment(firstDay).subtract('month', 1).year();
+            var lastMonth = moment(firstDay).subtract(1, 'month').month();
+            var lastYear = moment(firstDay).subtract(1, 'month').year();
 
             var daysInLastMonth = moment([lastYear, lastMonth]).daysInMonth();
 
